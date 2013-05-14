@@ -1,14 +1,14 @@
 tasks.module("homework");
 
-tasks.add("sumZero", {
-  instruction: "Write a function `f` it takes array `n`. Dived it in two other arrays first one there are elements whose don't sum to zero with other elements, the other one there are pair of elements which sum to zero. The order of elements should be like in input array. Return object with properities `rest` where are not \"zero-pair\" element and `zero` where are \"zero-pair\" elements. For example [3, 1, 2, 4, -2, -1] answer is {rest:[3, 4], zero:[1, -1, 2, -2]}. Number 0 isn't in any array. If in the array has different type than numeric return -1",
+tasks.add("sum-zero", {
+  instruction: "Write a function `f` it takes array `n`. Divide it in two other arrays first one there are elements whose don't sum to zero with other elements, the other one there are pair of elements which sum to zero. The order of elements should be like in input array. Return object with properities `rest` where are not \"zero-pair\" element and `zero` where are \"zero-pair\" elements. For example [3, 1, 2, 4, -2, -1] answer is {rest:[3, 4], zero:[1, -1, 2, -2]}. Number 0 isn't in any array. If in the array has different type than numeric return -1",
   js: "var f = function(n){\n\n}",
   tests: function(){
     test('test f', function(){
       // for testing functions see: http://api.qunitjs.com/category/assert/
       notStrictEqual(f, undefined, 'f is defined');
       strictEqual(typeof f, 'function', 'f is a function');
-      strictEqual(f([1, 'kupa', 2]), -1 , 'correct string check');
+      strictEqual(f([1, 'string', 2]), -1 , 'correct string check');
       deepEqual(f([1, 4, 5, 1, 2, -1, 10, -2]), {rest: [4, 5, 1, 10], zero: [1, -1, 2, -2]}, 'correct value for f([1, 4, 5, 1, 2, -1, 10, -2])');
       deepEqual(f([1, 5, -1]), {rest:[5], zero:[1, -1]}, 'correct value for f([1, 5, -1])');
       deepEqual(f([-1, 8, -8, 2, -2, 1, 3, -3, 10, 8, 1, -1, 2, 1, 6, -1, -2]), {rest:[10, 8, 6], zero:[-1, 1, 8, -8, 2, -2, 3, -3, 1, -1, 2, -2, 1, -1]}, 'correct value for f([-1, 8, -8, 2, -2, 1, 3, -3, 10, 8, 1, -1, 2, 1, 6, -1, -2])');
